@@ -1,2 +1,2 @@
 # phishing-analysis-project
-Project of Phishing Mail Analysis for learning purposed, suggested by Szkoła Security course.
+Project of Phishing Mail Analysis for learning purpose, suggested by Szkoła Security course.
