@@ -5,7 +5,7 @@ Desktop.ini
 $RECYCLE.BIN/
 .DS_Store
 
-# Archiwa / obrazy (opcjonalnie)
+# Archives / files / pictures
 *.zip
 *.7z
 *.rar
@@ -13,7 +13,7 @@ $RECYCLE.BIN/
 *.gz
 *.iso
 
-# Logi i tymczasowe
+# Temp and logs
 *.log
 *.tmp
 *.temp
