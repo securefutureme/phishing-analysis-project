@@ -1,6 +1,7 @@
 # Mail 01 / UPS threat in private mail 
 
-## 1) Streszczenie
+## 1) Podsumowanie
+
 - **Motyw:** 
 - **Typ ataku:** 
 - **Skutek po kliknięciu:** 
