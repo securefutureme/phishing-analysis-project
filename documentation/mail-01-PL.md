@@ -1,15 +1,12 @@
 # Mail 01 / UPS threat in private mail 
 
-> 🧭 **Cel:** krótka, praktyczna analiza jednej wiadomości: czerwone flagi, weryfikacja autentyczności, rekomendacje.
-
 ## 1) Streszczenie
 - **Motyw:** 
 - **Typ ataku:** 
 - **Skutek po kliknięciu:** 
-- **Ocena końcowa:** 🟥 Phishing / 🟧 Podejrzane / 🟩 Legit (wybierz)
+- **Ocena końcowa:** 🟥 Phishing / 🟧 Podejrzane / 🟩 Legit
 
 ---
-
 ## 2) Opis analizy
 
 
