@@ -1,26 +1,10 @@
-# Mail 01 / UPS threat in private mail 
+# Email 01 / UPS threat in private mail 
 
-## 1) Podsumowanie
+<p align="center">
+  <img src="screenshots/mail1/header1.png" width="600" alt="Widok maila">
+</p>
 
-- **Motyw:** 
-- **Typ ataku:** 
-- **Skutek po kliknięciu:** 
-- **Ocena końcowa:** 🟥 Phishing / 🟧 Podejrzane / 🟩 Legit
-
----
-## 2) Opis analizy
-
-
----
-##3) **Artefakty**
-
-- **Treść:** [`analysis/body1.txt`](../analysis/body1.txt)
-- **Nagłówki:** [`analysis/headers1.txt`](../analysis/headers1.txt)
-- **Zrzuty ekranu:** [`/screenshots`](../screenshots)
-- **Linki**:
-
-
-## 3) Czerwone flagi
+![Widok maila](screenshots/mail1/header1.png)
 
 | Gdzie? | Obserwacje | Wniosek |
 |---|---|---|
@@ -29,10 +13,7 @@
 | Styl/HTML |  | |
 | Stopka |  | |
 
----
-
-## 4) Analiza nagłówków (jeśli dostępne)
-| Pole | Wartość (zanonimizowana) | Notatka |
+| Pole | Wartość | Notatka |
 |---|---|---|
 | `From` |  | np. Nie pasuje do marki |
 | `Reply-To` | … | np. Inna domena niż `From` |
@@ -42,14 +23,19 @@
 | **DKIM** |  | jw. |
 | **DMARC** |  | jw. |
 
-## 5) Analiza URL
+## Analiza URL
+
 urlscan.io →
+
 VirusTotal (URL) → 
+
 WHOIS (who.is) →
+
 MXToolbox → 
+
 PhishTank → 
 
-## 6) Tabela IOC
+## Tabela IOC
 
 | Type        | Value                                           | Context                                   | First Seen  | Confidence |
 |-------------|--------------------------------------------------|--------------------------------------------|-------------|-----------|
