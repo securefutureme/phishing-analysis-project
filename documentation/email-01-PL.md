@@ -86,24 +86,27 @@ Dalsze wyniki w urlscanio, whois, i mxtoolbox potwierdzają, że była to "masó
 
 ### Analiza nagłówków
 
-| Pole | Wartość | Notatka |
-|---|---|---|
-| `From` |  | np. Nie pasuje do marki |
-| `Reply-To` | … | np. Inna domena niż `From` |
-| `Return-Path` | … | np. Często domena faktycznej wysyłki |
-| `Received` (ostatni hop) |  | np. Geolokacja/ASN odbiega od oczekiwanej |
-| **SPF** |  |  |
-| **DKIM** |  | jw. |
-| **DMARC** |  | jw. |
+| Pole                      | Wartość (sanitized)                                                                 | Notatka |
+|---                        |---                                                                                  |---|
+| `From`                    | `"UPS"` <…@chipcrack[.]es>                                                          | **Display name spoofing** — domena ≠ UPS. |
+| `Reply-To`                | —                                                                                    | Brak w dostarczonym fragmencie. |
+| `Return-Path`            | <…@chipcrack[.]es>                                                                   | Często realny nadawca/kanał zwrotu. |
+| `Received` (ostatni hop) | `from aaa.altnewlywed[.]shop ([163.172.189.190])`                                    | VPS/losowa domena — nie infrastruktura UPS. |
+| **SPF**                   | n/a                                                                                  | Brak `Authentication-Results:` w nagłówkach. |
+| **DKIM**                  | `d=chipcrack[.]es; a=rsa-sha1; s=smtp`                                              | Podpis dla domeny atakującego, **nie** marki. |
+| **DMARC**                 | n/a                      
 
 
-### Tabela IOC
+### Tabela IOC (sanitized / defanged)
 
-| Type        | Value                                           | Context                                   | First Seen  | Confidence |
-|-------------|--------------------------------------------------|--------------------------------------------|-------------|-----------|
-| Domain      |                               |         |             | High      |
-| URL         |  |   |             | High      |
-| Subject     |                       |                              |             | Medium    |
-| Phrase      |                 |            |             | Medium    |
-| IP          |                                                 |         |             | Low       |
-| Email       |                                                 |                     |             | Low       |
+| Type   | Value                                                                                                  | Context                                   | First Seen  | Confidence |
+|---     |---                                                                                                     |---                                        |---          |---|
+| Domain | chipcrack[.]es                                                                                        | Envelope-From / Return-Path / DKIM d=     | 2023-05-11  | High      |
+| Domain | aaa[.]altnewlywed[.]shop                                                                              | Host nadawczy w `Received`                | 2023-05-11  | High      |
+| IP     | 163[.]172[.]189[.]190                                                                                 | Źródłowe IP serwera nadawcy               | 2023-05-11  | High      |
+| URL    | hxxp://5[.]231[.]202[.]248/ShpVWA32333Tpuf133gwzwgzcmey1491.../3028529                                | CTA/„unsubscribe” z maila                  | 2023-05-11  | High      |
+| Domain | chipcrack[.]net                                                                                       | Tracker/piksel kampanii                    | 2023-05-11  | Medium    |
+| URL    | hxxp://chipcrack[.]net/track/3zpkFh32333PFCr133uvidiswzhm1491.../30285o9                             | Tracking pixel / open-tracking             | 2023-05-11  | Medium    |
+| Subject| „nie ma już czasu”                                                                                    | Presja czasu (socjotechnika)               | 2023-05-11  | Medium    |
+| Phrase | „update your payment / unsubscribe click” *(jeśli występuje w body)*                                  | Frazy kampanijne                           | 2023-05-11  | Medium    |
+| Email  | “UPS” <…@chipcrack[.]es>         
