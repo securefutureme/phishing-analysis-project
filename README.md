@@ -14,7 +14,7 @@ W tym repo prezentuję krótkie, praktyczne analizy **realnych** (oraz fikcyjnyc
 
 - Użytkownikom pozwala nie kliknąć i zatrzymać incydent u źródła. Wbrew pozorom to właśnie tutaj powstaje najwięcej incydentów naruszającym bezpieczeństwo.
 - Helpdesk/SOC ułatwia szybką triage i eskalację (blokady domen/IP, IOC do SIEM), co skraca czas reakcji.
-- Admnistratorom/bezpieczeństwu daje podstawę do twardych kontroli (DMARC, filtrowanie, makra, zgłaszanie jednym kliknięciem).
+- Admnistratorom/cybersecurity daje podstawę do twardych kontroli (DMARC, filtrowanie, makra, zgłaszanie jednym kliknięciem).
 - Kadrze kierowniczej zapewnia jasne rekomendacje ograniczające ryzyko i koszty (fraud, przestoje, kary).
 
 **Adresuję moje repo do:**
