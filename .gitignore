@@ -17,3 +17,8 @@ $RECYCLE.BIN/
 *.log
 *.tmp
 *.temp
+
+# Other
+*.htm
+*.html
+*.eml

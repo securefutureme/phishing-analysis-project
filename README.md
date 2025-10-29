@@ -1,16 +1,13 @@
 # Analiza maila phishingowego / Phishing mail analysis
 
-## Indeks analiz
+| #  | Nazwa analizy / Analysis name            | PL                                     | ENG                                         
+|----|--------------------------|----------------------------------------|---------------------------------------------|
+| 01 | UPS   | [Case 01](documentation/case-01-netflix.md) | [Case 01 ENG](documentation/case-01-netflix-ENG.md) |
+| 02 |        | [Case 02](documentation/case-02-m365-reauth.md) | [ENG](documentation/case-02-m365-reauth-ENG.md) | 
+| 03 |          | [Case 03](documentation/case-03-godaddy-billing.md) | [ENG](documentation/case-03-godaddy-billing-ENG.md) |
+| 04 |           | [Case 04](documentation/case-04-parcel-fee.md) | [ENG](documentation/case-04-parcel-fee-ENG.md) |
+| 05 |          | [Case 05](documentation/case-05-webmail-quota.md) | [ENG](documentation/case-05-webmail-quota-ENG.md) |
 
-| #  | Nazwa analizy / Analysis name            | PL                                     | ENG                                         | Body | Headers | Screens |
-|----|--------------------------|----------------------------------------|---------------------------------------------|------|---------|---------|
-| 01 | UPS threat in private mail    | [Case 01](documentation/case-01-netflix.md) | [Case 01 ENG](documentation/case-01-netflix-ENG.md) | [txt](analysis/body1.txt) | [txt](analysis/headers1.txt) | [dir](screenshots/) |
-| 02 | M365 re-auth             | [Case 02](documentation/case-02-m365-reauth.md) | [ENG](documentation/case-02-m365-reauth-ENG.md) | [txt](analysis/body2.txt) | [txt](analysis/headers2.txt) | [dir](screenshots/) |
-| 03 | GoDaddy billing          | [Case 03](documentation/case-03-godaddy-billing.md) | [ENG](documentation/case-03-godaddy-billing-ENG.md) | — | — | — |
-| 04 | Parcel fee               | [Case 04](documentation/case-04-parcel-fee.md) | [ENG](documentation/case-04-parcel-fee-ENG.md) | — | — | — |
-| 05 | Webmail quota            | [Case 05](documentation/case-05-webmail-quota.md) | [ENG](documentation/case-05-webmail-quota-ENG.md) | — | — | — |
-
-![Widok maila](screenshots/01_mail_view.png)
 
 ## Wstęp
 
@@ -26,7 +23,7 @@ W tym repo prezentuję krótkie, praktyczne analizy **realnych** (oraz fikcyjnyc
 - SOC/IT – jako przykładowy sposób opisywania analizy phishingu;
 - organizacji – w celach szkoleniowych;
 
-## Czym jest mail phishingowy (w skrócie)
+## Co to jest phishing?
 Phishing jest to metoda oszustwa opierająca się na **“podszywaniu”** się pod inną osobę albo instytucję, próbując w ten sposób **wyłudzić poufne dane, zainfekować komputer czy inne nieprzyjazne działania.**
 
 ### Przykłady phishingu:
