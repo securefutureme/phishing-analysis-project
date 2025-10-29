@@ -1,13 +1,12 @@
-# Analiza maila phishingowego / Phishing mail analysis
+# Projekt - Analiza maila phishingowego 
 
-| #  | Nazwa analizy / Analysis name            | PL                                     | ENG                                         
+| #  | Nazwa analizy | PL                                     | ENG                                                             
 |----|--------------------------|----------------------------------------|---------------------------------------------|
-| 01 | UPS   | [Case 01](documentation/case-01-netflix.md) | [Case 01 ENG](documentation/case-01-netflix-ENG.md) |
-| 02 |        | [Case 02](documentation/case-02-m365-reauth.md) | [ENG](documentation/case-02-m365-reauth-ENG.md) | 
-| 03 |          | [Case 03](documentation/case-03-godaddy-billing.md) | [ENG](documentation/case-03-godaddy-billing-ENG.md) |
-| 04 |           | [Case 04](documentation/case-04-parcel-fee.md) | [ENG](documentation/case-04-parcel-fee-ENG.md) |
-| 05 |          | [Case 05](documentation/case-05-webmail-quota.md) | [ENG](documentation/case-05-webmail-quota-ENG.md) |
-
+| 01 | UPS   | [Mail 1](documentation/email-01-PL.md) | [Mail 1](documentation/email-01-ENG.md) |
+| 02 |        | [Mail 2](documentation/email-02-PL.md) | [Mail 1](documentation/email-02-ENG.md) |
+| 03 |          | [Mail 3](documentation/email-03-PL.md) | [Mail 1](documentation/email-03-ENG.md) |
+| 04 |           | [Mail 4](documentation/email-04-PL.md) | [Mail 1](documentation/email-04-ENG.md) |
+| 05 |          | [Mail 5](documentation/email-05-PL.md) | [Mail 1](documentation/email-05-ENG.md) |
 
 ## Wstęp
 
