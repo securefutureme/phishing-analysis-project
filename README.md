@@ -23,7 +23,7 @@ W tym repo prezentuję krótkie, praktyczne analizy **realnych** (oraz fikcyjnyc
 
 | Nazwa analizy | PL | ENG |
 |---|---|---|
-| Kampania phishingowa - UPS | [Mail 1](documentation/email-01-PL.md) | [Mail 1](documentation/email-01-ENG.md) |
+| Kampania phishingowa z użyciem firmy kurierskiej UPS | [Mail 1](documentation/email-01-PL.md) | [Mail 1](documentation/email-01-ENG.md) |
 |  | [Mail 2](documentation/email-02-PL.md) | [Mail 1](documentation/email-02-ENG.md) |
 |  | [Mail 3](documentation/email-03-PL.md) | [Mail 1](documentation/email-03-ENG.md) |
 |  | [Mail 4](documentation/email-04-PL.md) | [Mail 1](documentation/email-04-ENG.md) |
@@ -92,7 +92,7 @@ This repository contains short, practical analyses of **real** (and some fiction
 
 | Analysis name | PL | ENG |
 |---|---|---|
-| UPS - phishing campaing | [Mail 1](documentation/email-01-PL.md) | [Mail 1](documentation/email-01-ENG.md) |
+| Phishing campaing with usage of parcel company UPS | [Mail 1](documentation/email-01-PL.md) | [Mail 1](documentation/email-01-ENG.md) |
 |  | [Mail 2](documentation/email-02-PL.md) | [Mail 1](documentation/email-02-ENG.md) |
 |  | [Mail 3](documentation/email-03-PL.md) | [Mail 1](documentation/email-03-ENG.md) |
 |  | [Mail 4](documentation/email-04-PL.md) | [Mail 1](documentation/email-04-ENG.md) |
