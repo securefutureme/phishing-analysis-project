@@ -1,13 +1,5 @@
 # Projekt - Analiza maila phishingowego 
 
-| #  | Nazwa analizy | PL                                     | ENG                                                             
-|----|--------------------------|----------------------------------------|---------------------------------------------|
-| 01 | UPS   | [Mail 1](documentation/email-01-PL.md) | [Mail 1](documentation/email-01-ENG.md) |
-| 02 |        | [Mail 2](documentation/email-02-PL.md) | [Mail 1](documentation/email-02-ENG.md) |
-| 03 |          | [Mail 3](documentation/email-03-PL.md) | [Mail 1](documentation/email-03-ENG.md) |
-| 04 |           | [Mail 4](documentation/email-04-PL.md) | [Mail 1](documentation/email-04-ENG.md) |
-| 05 |          | [Mail 5](documentation/email-05-PL.md) | [Mail 1](documentation/email-05-ENG.md) |
-
 ## Wstęp
 
 W tym repo prezentuję krótkie, praktyczne analizy **realnych** (oraz fikcyjnych, zaczęrpniętych z różnych źródeł) maili phishingowych. Umiejętność rozpoznawania czerwonych flag i weryfikacji autentyczności jest kluczowa, ponieważ:
@@ -21,6 +13,15 @@ W tym repo prezentuję krótkie, praktyczne analizy **realnych** (oraz fikcyjnyc
 - użytkowników – jak rozpoznać phishing i czego nie robić;
 - SOC/IT – jako przykładowy sposób opisywania analizy phishingu;
 - organizacji – w celach szkoleniowych;
+
+| #  | Nazwa analizy | PL                                     | ENG                                                             
+|----|--------------------------|----------------------------------------|---------------------------------------------|
+| 01 | UPS   | [Mail 1](documentation/email-01-PL.md) | [Mail 1](documentation/email-01-ENG.md) |
+| 02 |        | [Mail 2](documentation/email-02-PL.md) | [Mail 1](documentation/email-02-ENG.md) |
+| 03 |          | [Mail 3](documentation/email-03-PL.md) | [Mail 1](documentation/email-03-ENG.md) |
+| 04 |           | [Mail 4](documentation/email-04-PL.md) | [Mail 1](documentation/email-04-ENG.md) |
+| 05 |          | [Mail 5](documentation/email-05-PL.md) | [Mail 1](documentation/email-05-ENG.md) |
+
 
 ## Co to jest phishing?
 Phishing jest to metoda oszustwa opierająca się na **“podszywaniu”** się pod inną osobę albo instytucję, próbując w ten sposób **wyłudzić poufne dane, zainfekować komputer czy inne nieprzyjazne działania.**
