@@ -44,18 +44,18 @@ Dalsze wyniki w urlscanio, whois, i mxtoolbox potwierdzają, że była to "masó
 
 - **Motyw:** przekierowanie do strony kampanii (prawd. wyłudzenie danych/opłaty - nie można zweryfikować ze względu na wygaszoną kampapanię).
 - **Typ ataku:** Prawdopodobnie masowy phishing z podrobieniem marki oraz metoda podrabiania wyświetlanej nazwy;
-- **Ocena końcowa:** 🟥 Phishing
+- **Ocena końcowa:** _**Phishing**_
 
 | Gdzie?            | Obserwacje                                                                                                      | Wniosek |
 |---                |---                                                                                                               |---|
 | Nadawca (From)    | `"UPS"` <…@chipcrack[.]es>                                                                                       | **Metoda na podrabianie wyświetlanej nazwy** |
-| Return-Path/DKIM  | `Return-Path: …@chipcrack[.]es`, `DKIM d=chipcrack[.]es (rsa-sha1)`                                              | Podpis atakującego, nie marki; DKIM nie uwiarygadnia UPS. |
-| Łańcuch Received  | `from aaa.altnewlywed[.]shop `                                                                                   | Wysyłka z losowej domeny, nie infrastruktury UPS. |
-| Domena linku (CTA)| `hxxp://5[.]231[.]202[.]248/...`                                                                               | **Surowy IP** i **brand–domain mismatch** → |
-| Treść             | „**nie ma już czasu**” (alarmizm)                                                                             | **Socjotechnika** – presja czasu. |
-| Styl/HTML         | Tabelkowy szablon, klasy generatora, zewnętrzne proxy dla logo                                                | Kopia layoutu, niska jakość, brak spójności z marką. |
-| Grafiki           | Obraz z `i.imgur[.]com`                                                                                      | Assety hostowane poza marką - nietypowe dla UPS, plus nieaktywny obrazek  |
-| Stopka            | „Unsub” IP `5[.]231[.]202[.]248`; oraz piksel `chipcrack[.]net/track/...`                                    | Link **nie** prowadzi do UPS; tracking kampanii. |
+| Return-Path/DKIM  | `Return-Path: …@chipcrack[.]es`, `DKIM d=chipcrack[.]es (rsa-sha1)`                                              | Podpis atakującego, nie marki; DKIM nie uwiarygadnia UPS |
+| Łańcuch Received  | `from aaa.altnewlywed[.]shop `                                                                                   | Wysyłka z losowej domeny, nie infrastruktury UPS |
+| Domena linku (CTA)| `hxxp://5[.]231[.]202[.]248/...`                                                                               | **IP "surowy"** oraz **niezgodność domeny odbiorcy z marką** |
+| Treść             | „**nie ma już czasu**”                                                                                         | **Socjotechnika** - alarminzm, wywołanie pośpiechu |
+| Styl/HTML         | Tabelkowy szablon, klasy generatora, zewnętrzne proxy dla logo                                                | Niska jakość maila, brak spójności z marką |
+| Grafiki           | Obraz z `i.imgur[.]com`                                                                                      | Assety hostowane poza marką - nietypowe dla UPS, plus nieaktywny obraz |
+| Stopka            | „Unsub” IP `5[.]231[.]202[.]248`; oraz piksel `chipcrack[.]net/track/...`                                    | Link **nie** prowadzi do UPS; tracking kampanii |
 
 ### Analiza URL
 
@@ -90,16 +90,16 @@ Dalsze wyniki w urlscanio, whois, i mxtoolbox potwierdzają, że była to "masó
 |---                        |---                                                                                  |---|
 | `From`                    | `"UPS"` <…@chipcrack[.]es>                                                          | **Metoda na podrabianie wyświetlanej nazwy** |
 | `Reply-To`                | —                                                                                    | n/a |
-| `Return-Path`            | <…@chipcrack[.]es>                                                                   | Często realny nadawca/kanał zwrotu. |
-| `Received` (ostatni hop) | `from aaa.altnewlywed[.]shop ([163.172.189.190])`                                    | VPS/losowa domena — nie jest to domena UPS. |
+| `Return-Path`            | <…@chipcrack[.]es>                                                                    | Adres zwrotny wskazuje na domenę nadawcy kampanii. |
+| `Received` (ostatni hop) | from aaa.altnewlywed[.]shop ([163.172.189.190])                                       | Ostatni host to VPS (Virtual Private Server) z obcą domeną; brak powiązania z UPS. |
 | **SPF**                   | n/a                                                                                  | n/a |
 | **DKIM**                  | `d=chipcrack[.]es; a=rsa-sha1; s=smtp`                                               | Podpis dla domeny atakującego, nie UPS |
 | **DMARC**                 | n/a                                                                                  | n/a |
 
 
-### Tabela IOC (sanitized / defanged)
+### Tabela IOC
 
-| **Type**   | **Value**                                                                                              | **Context **                              | **Confidence** |
+| **Type**   | **Value**                                                                                              | **Context**                              | **Confidence** |
 |---     |---                                                                                                        |---                                         |---|
 | **Domain** | chipcrack[.]es                                                                                        | Envelope-From / Return-Path / DKIM d=     | High      |
 | **Domain** | aaa[.]altnewlywed[.]shop                                                                              | Host nadawczy w `Received`                | High      |
@@ -107,5 +107,5 @@ Dalsze wyniki w urlscanio, whois, i mxtoolbox potwierdzają, że była to "masó
 | **URL**    | hxxp://5[.]231[.]202[.]248/ShpVWA32333Tpuf133gwzwgzcmey1491.../3028529                                | CTA/„U.n.s.u.b” z maila                    | High      |
 | **Domain** | chipcrack[.]net                                                                                       | Tracker/piksel kampanii                    | Medium    |
 | **URL**    | hxxp://chipcrack[.]net/track/3zpkFh32333PFCr133uvidiswzhm1491.../30285o9                              | Tracker/piksel kampanii                    | Medium    |
-| **Subject**| „nie ma już czasu”                                                                                    | Presja czasu (socjotechnika)               | Medium    |
+| **Subject**| „nie ma już czasu”                                                                                    | Wywołanie presji czasu (socjotechnika)      | Medium    |
 | **Phrase** | „If you no longer wish to receive emails from us, please U.n.s.u.b”                                   | Frazy kampani                           | Medium    |
