@@ -1,4 +1,4 @@
-# Email 01 - UPS 
+# Email 01 - Kampania phishingowa z użyciem firmy kurierskiej UPS
 
 Już na etapie wstępnego oglądu — z perspektywy zwykłego odbiorcy — w oczy od razu wpadają dwa elementy: alarmistyczny tytuł „Nie ma już czasu” oraz deklarowany nadawca „UPS”. 
 To połączenie samo w sobie uruchamia intuicyjny hamulec: komunikat o skrajnym pośpiechu zwykle nie pasuje do typowego, spokojnego stylu komunikacji firm kurierskich.
