@@ -43,12 +43,12 @@ Dalsze wyniki w urlscanio, whois, i mxtoolbox potwierdzają, że była to "masó
 ## Podsumowanie
 
 - **Motyw:** przekierowanie do strony kampanii (prawd. wyłudzenie danych/opłaty - nie można zweryfikować ze względu na wygaszoną kampapanię).
-- **Typ ataku:** Prawdopodobnie masowy phishing z podrobieniem marki oraz metoda podrabiania wyświetlanej nazwy;
+- **Typ ataku:** Prawdopodobnie masowy phishing z podrobieniem marki oraz spoofing wyświetlanej nazwy,
 - **Ocena końcowa:** _**Phishing**_
 
 | Gdzie?            | Obserwacje                                                                                                      | Wniosek |
 |---                |---                                                                                                               |---|
-| Nadawca (From)    | `"UPS"` <…@chipcrack[.]es>                                                                                       | **Metoda na podrabianie wyświetlanej nazwy** |
+| Nadawca (From)    | `"UPS"` <…@chipcrack[.]es>                                                                                       | **Spoofing wyświetlanej nazwy** |
 | Return-Path/DKIM  | `Return-Path: …@chipcrack[.]es`, `DKIM d=chipcrack[.]es (rsa-sha1)`                                              | Podpis atakującego, nie marki; DKIM nie uwiarygadnia UPS |
 | Łańcuch Received  | `from aaa.altnewlywed[.]shop `                                                                                   | Wysyłka z losowej domeny, nie infrastruktury UPS |
 | Domena linku (CTA)| `hxxp://5[.]231[.]202[.]248/...`                                                                               | **IP "surowy"** oraz **niezgodność domeny odbiorcy z marką** |
@@ -88,7 +88,7 @@ Dalsze wyniki w urlscanio, whois, i mxtoolbox potwierdzają, że była to "masó
 
 | Pole                      | Wartość                                                                           | Notatka |
 |---                        |---                                                                                  |---|
-| `From`                    | `"UPS"` <…@chipcrack[.]es>                                                          | **Metoda na podrabianie wyświetlanej nazwy** |
+| `From`                    | `"UPS"` <…@chipcrack[.]es>                                                          | **Spoofing wyświetlanej nazwy** |
 | `Reply-To`                | —                                                                                    | n/a |
 | `Return-Path`            | <…@chipcrack[.]es>                                                                    | Adres zwrotny wskazuje na domenę nadawcy kampanii. |
 | `Received` (ostatni hop) | from aaa.altnewlywed[.]shop ([163.172.189.190])                                       | Ostatni host to VPS (Virtual Private Server) z obcą domeną; brak powiązania z UPS. |
