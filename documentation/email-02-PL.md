@@ -1,10 +1,50 @@
-# Email 02 - 
+# Email 02 / Credential phishing
 
+**Mail użyty z malware-traffic-analysis.net ------- Użycie tylko dla celów treningowych / edukacyjnych**
+
+Biorąc się do analizy maila pobranego z świetnej strony ze zbiorem malware i maili phishingowych (co jest niesamowitym wsparciem dla każdego, kto chce trenować swoje umiejętności analityczne potrzebne do SOC i nie tylko), widzimy od razu, że mail został skonstruowany tak, żeby przyciągnąć naszą uwagę. Jakbyśmy zamienili się w zwykłego użytkownika, który otwiera skrzynkę mailową i dostaje takiego maila (zakładając, że korzystamy ze strony malware-traffic-analysis.net), dostajemy informację, że mail przyszedł z Supportu znanej nam strony.
+
+Pierwsza czerwona flaga jaka jest tutaj, to rozjechanie się tytułu nadawcy **„malware-traffic-analysis.net Support”,** w stosunku do adresu mailowego nadawcy **sues@nnwifi[.]com** i to właśnie rozjechanie nazwy marki z realnym adresem pozwala nam sądzić, że jest to phishing. Z punktu widzenia użytkownika „Support” brzmi wiarygodnie, ale klient pocztowy pokazuje prawdę: nadawcą jest **sues@nnwifi[.]com**, czyli zupełnie inna domena niż ta użyta w tytule nadawcy. 
+
+Dodamy do tego jeszcze **„Warning: Final notice”** - gdzie od razu widać, że to **typowy chwyt socjotechniczny na wywarcie presji czasu**. Widzimy tu dwie największe czerwone flagi, na które zwracamy uwagę przy analizie phishingu.
+
+<p align="center">
+  <img src="/screenshots/mail2/header1.png" alt="Podgląd nagłówka" width="60%">
+</p>
+<p align="center">
+  <em>Rys. 1 — Nagłówki</em>
+</p>
+
+Zagłębiając się dalej w maila, w treści wiadomości pojawia się prośba o „**potwierdzenie własności adresu**” z linkiem prowadzącym poza domenę odbiorcy. Po najechaniu kursorem widać **dwie docelowe lokalizacje**:
+
+- `hxxps://servervirto[.]com[.]co/ed/trn/update?email=…`
+  
+- (przez wrapper Google) → `hxxp://em[.]osanewsletter[.]com/admin/includes/00/update?email=[[Email]]`
+
+To **brand–domain mismatch** w czystej postaci. Dodatkowo, link przez Google (`www.google.com/url?q=…`) służy do maskowania faktycznego celu.
+
+<p align="center">
+  <img src="/screenshots/mail2/body1.png" alt="Podgląd nagłówka" width="60%">
+  </p>
+  <p align="center">
+    <em>Rys. 2 — Treść wiadomości</em>
+</p>
+
+W nagłówkach wiadmości zdobywamy coraz więcej dowodów. Ostatni hop to mail[.]nnwifi[.]com (173[.]46[.]174[.]49) — to z tego serwera wiadomość trafiła do adresata. Niżej widzimy kilka przeskoków po localhost (127.0.0.1) przez amavisd-new (jest to swego rodzaju "pośrednik” między serwerem pocztowym (MTA, np. Postfix) a skanerami treści, który działa na tym samym hoście); to nie są osobne serwery w Internecie, tylko wewnętrzne przekazania w obrębie mail.nnwifi.com. Najważniejszy jest jednak najniższy wpis:
+
+- **Received: from nnwifi[.]com (94[.]100[.]31[.]27) by mail[.]nnwifi[.]com with ESMTP**
+
+Żeby to ubrać w słowa najprościej - nadanie nastąpiło z hosta nnwifi[.]com (IP 94[.]100[.]31[.]27) z użyciem ESMTP (czyli uwierzytelnionego zgłoszenia przez klienta). **Czyli ktoś zalogował się do serwera mail[.]nnwifi[.]com i wysłał wiadomość jako „Support”, po czym lokalny MTA przepuścił to przez swoje filtry i wysłał dalej.** To wygląda na zwykły serwer/hosting nadawcy kampanii, **nie** infrastrukturę
+malware-traffic-analysis[.]net.
+
+Trzy różne domeny w jednej wiadomości pozwalają nam zatwierdzić wniosek, że jest to phishing. Nadawca (nnwifi.com), marka w nazwie (malware-traffic-analysis[.]net), oraz cel linku (servervirto[.]com[.]co / em[.]osanewsletter[.]com przez wrapper Google). Legalne powiadomienia rzadko mieszają tyle przestrzeni nazw.
+
+---
 
 ## Podsumowanie
 
-- **Motyw:** przekierowanie do strony kampanii (prawd. wyłudzenie danych/opłaty - nie można zweryfikować ze względu na wygaszoną kampapanię).
-- **Typ ataku:** Prawdopodobnie masowy phishing z podrobieniem marki oraz metoda podrabiania wyświetlanej nazwy;
+- **Motyw:** podszycie się pod dział wsparcia skrzynki i przekierowanie na zewnętrzne strony kampanii w celu wyłudzenia poświadczeń.
+- **Typ ataku:** masowy phishing z **podszyciem pod markę** oraz **spoofingiem nazwy wyświetlanej** (atak linkowy).
 - **Ocena końcowa:** _**Phishing**_
 
 | Gdzie?            | Obserwacje                                                                                                      | Wniosek |
